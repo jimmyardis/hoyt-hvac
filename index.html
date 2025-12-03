@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hoyt's Heating and Air Conditioning - Serving South Carolina since 1958 with expert HVAC services, repairs, installations, and maintenance.">
     <title>Hoyt's Heating and Air Conditioning - Serving South Carolina Since 1958</title>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Optimized Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        
+        /* Use system fonts for better performance */
         * {
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
         }
         
         .gradient-bg {
@@ -23,7 +32,7 @@
         }
         
         .card-hover {
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .card-hover:hover {
@@ -33,7 +42,7 @@
         
         .btn-primary {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .btn-primary:hover {
@@ -63,6 +72,15 @@
         .logo-container {
             max-width: 280px;
         }
+
+        .vintage-photo {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .vintage-photo:hover {
+            filter: grayscale(0%);
+        }
     </style>
 </head>
 <body class="smooth-scroll bg-gray-50">
@@ -72,7 +90,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <div class="flex items-center logo-container">
-                    <img src="hotylogo.png" alt="Hoyt's Heating and Air Conditioning" class="h-16 w-auto">
+                    <img src="hotylogo.png" alt="Hoyt's Heating and Air Conditioning" class="h-16 w-auto" width="280" height="64">
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
@@ -87,7 +105,7 @@
                     <i class="fas fa-phone mr-2"></i>Call Now
                 </a>
                 
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700" aria-label="Toggle menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -113,11 +131,11 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="text-white fade-in-up">
-                    <h2 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                         Exceptional Air Conditioning Service Since 1958
-                    </h2>
+                    </h1>
                     <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        Serving South Carolina from Columbia to the coast with quality repairs, installations, and duct/coil cleanings. Our talented team of technicians is ready to serve you.
+                        Factory Authorized Carrier Dealer serving South Carolina from Columbia to the coast with quality repairs, installations, and duct/coil cleanings. Our talented team of factory-trained technicians is ready to serve you.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg text-center">
@@ -130,12 +148,12 @@
                     
                     <div class="mt-12 grid grid-cols-3 gap-6">
                         <div class="text-center">
-                            <div class="text-4xl font-bold">65+</div>
+                            <div class="text-4xl font-bold">66+</div>
                             <div class="text-gray-400 text-sm mt-1">Years Experience</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-4xl font-bold">7</div>
-                            <div class="text-gray-400 text-sm mt-1">Days a Week</div>
+                            <div class="text-4xl font-bold">24/7</div>
+                            <div class="text-gray-400 text-sm mt-1">Emergency Service</div>
                         </div>
                         <div class="text-center">
                             <div class="text-4xl font-bold">Free</div>
@@ -150,11 +168,11 @@
                         <div class="relative bg-white rounded-3xl p-8 shadow-2xl">
                             <div class="text-center">
                                 <i class="fas fa-temperature-high text-7xl text-blue-700 mb-6"></i>
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4">What To Expect From Hoyt's</h3>
+                                <h2 class="text-2xl font-bold text-gray-900 mb-4">What To Expect From Hoyt's</h2>
                                 <ul class="text-left space-y-3 text-gray-700">
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Air conditioning repairs</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Factory trained technicians</li>
+                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 24 hour emergency service</li>
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Fully licensed and insured</li>
-                                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Service 7 days a week</li>
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Free estimations</li>
                                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Fair pricing</li>
                                 </ul>
@@ -172,7 +190,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Residential & Commercial Services</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Complete HVAC solutions with a fleet of vehicles dispatched daily for quick, efficient service
+                    Complete HVAC solutions including boilers, chillers, dehumidifiers, exhaust systems, and sheet metal fabrication
                 </p>
             </div>
 
@@ -184,7 +202,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Air Conditioning</h3>
                     <p class="text-gray-600 mb-6">
-                        Expert AC installations and repairs. Keep your home or business cool and comfortable year-round with quality service.
+                        Expert AC installations and repairs. Keep your home or business cool and comfortable year-round with quality Carrier service.
                     </p>
                     <ul class="space-y-2 text-gray-700">
                         <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> AC Installation</li>
@@ -198,13 +216,13 @@
                     <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-6 shadow-lg">
                         <i class="fas fa-wind text-3xl text-orange-600"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Duct & Coil Cleaning</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Heating & Ventilation</h3>
                     <p class="text-gray-600 mb-6">
-                        Professional duct and coil cleaning services to improve air quality and system efficiency for your property.
+                        Professional heating and ventilation services to improve air quality and system efficiency for your property.
                     </p>
                     <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Air Duct Cleaning</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Coil Cleaning</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Boilers & Heating</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Exhaust Systems</li>
                         <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Air Quality Improvement</li>
                     </ul>
                 </div>
@@ -216,11 +234,11 @@
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Services</h3>
                     <p class="text-gray-600 mb-6">
-                        Full-service commercial HVAC, electrical, and metal fabrication for businesses of all sizes.
+                        Full-service commercial HVAC, electrical, sheet metal fabrication, and communication systems for businesses.
                     </p>
                     <ul class="space-y-2 text-gray-700">
                         <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Commercial HVAC</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Electrical Services</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Electrical & Data</li>
                         <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Metal Fabrication</li>
                     </ul>
                 </div>
@@ -232,9 +250,9 @@
     <section id="maintenance" class="py-20 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Planned Maintenance Programs</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Comprehensive Maintenance Agreements</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    When you invest in a maintenance agreement with Hoyt's, we make sure you get the proper maintenance your system needs
+                    When you invest in a maintenance agreement with Hoyt's, we make sure you get the proper maintenance your system needs. Available for both residential and commercial customers.
                 </p>
             </div>
 
@@ -293,9 +311,9 @@
             </div>
 
             <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-10 text-white text-center">
-                <h3 class="text-3xl font-bold mb-4">Global Maintenance Plans</h3>
+                <h3 class="text-3xl font-bold mb-4">24 Hour Emergency Service</h3>
                 <p class="text-xl mb-6 max-w-4xl mx-auto">
-                    Excellent maintenance options for commercial and residential applications. Our plans will keep your furnace, heat pump, or air conditioner in healthy working order at a price that suits your needs. Our expert technicians use the best diagnostic equipment and keep essential parts on hand for quick repairs.
+                    At Hoyt's you will always speak to a person, regardless of the hour. Our expert technicians use the best diagnostic equipment and keep essential parts on hand for quick repairs.
                 </p>
                 <a href="#contact" class="inline-block bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
                     Learn More About Maintenance Plans
@@ -307,26 +325,54 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our History</h2>
+                <p class="text-xl text-gray-600">A proud South Carolina tradition since 1958</p>
+            </div>
+
+            <!-- Founder Story -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Founder: Hoyt Shuler</h3>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        After serving his country with honor in World War II, the late Hoyt Shuler returned home with a vision to serve his community. In 1958, he established Hoyt's Refrigeration, bringing quality cooling services to South Carolina families.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        With an increasing demand for air conditioning and heating services, Mr. Shuler expanded the business and changed the name in 1962 to Hoyt's Heating & Air Conditioning Inc. His commitment to quality service and customer satisfaction laid the foundation for the company we are today.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Over six decades later, we continue to honor his legacy by providing the same level of dedication, expertise, and friendly service that made Hoyt's a trusted name throughout South Carolina.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="bg-gray-100 rounded-2xl p-6 shadow-xl">
+                        <img src="Old-Hoyt.png" alt="Hoyt Shuler with original Hoyt's service van" class="vintage-photo rounded-lg w-full" width="600" height="450" loading="lazy">
+                        <p class="text-center text-gray-600 mt-4 italic">Founder Hoyt Shuler with one of the original Hoyt's service vehicles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Info -->
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Serving South Carolina Since 1958</h2>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Serving South Carolina Since 1958</h3>
                     <p class="text-lg text-gray-700 mb-6 leading-relaxed">
                         As a full service heating, air conditioning and electrical contractor, we can service your needs, no matter how large or small. We have the ability to perform any task whether it be residential, commercial or industrial.
                     </p>
                     <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        We have a fleet of vehicles being dispatched daily which allows us to serve residents of South Carolina quickly and efficiently with quality repairs and installations. From Sumter to Columbia and all the way to the coast, our talented technicians are ready to help.
+                        As a Factory Authorized Carrier Dealer, our technicians are factory trained on the latest equipment and technologies. We have a fleet of vehicles being dispatched daily which allows us to serve residents of South Carolina quickly and efficiently. From Sumter to Columbia and all the way to the coast, our talented technicians are ready to help.
                     </p>
                     
                     <div class="grid grid-cols-2 gap-6">
                         <div class="bg-gray-50 p-6 rounded-xl shadow-md">
                             <i class="fas fa-certificate text-3xl text-blue-700 mb-3"></i>
-                            <h4 class="font-bold text-gray-900 mb-2">Licensed & Insured</h4>
-                            <p class="text-sm text-gray-600">Fully licensed, bonded, and insured for your protection and peace of mind</p>
+                            <h4 class="font-bold text-gray-900 mb-2">Factory Authorized</h4>
+                            <p class="text-sm text-gray-600">Carrier Dealer with factory trained technicians</p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl shadow-md">
                             <i class="fas fa-award text-3xl text-blue-700 mb-3"></i>
-                            <h4 class="font-bold text-gray-900 mb-2">Fair Pricing</h4>
-                            <p class="text-sm text-gray-600">Transparent, competitive pricing with free estimates on all services</p>
+                            <h4 class="font-bold text-gray-900 mb-2">Licensed & Insured</h4>
+                            <p class="text-sm text-gray-600">Fully licensed, bonded, and insured for your protection</p>
                         </div>
                     </div>
                 </div>
@@ -343,9 +389,9 @@
                         <div class="text-blue-200">Serving South Carolina</div>
                     </div>
                     <div class="bg-blue-800 rounded-2xl p-8 text-white -mt-8">
-                        <i class="fas fa-clock text-4xl mb-4"></i>
-                        <div class="text-3xl font-bold mb-2">7</div>
-                        <div class="text-blue-200">Days a Week</div>
+                        <i class="fas fa-phone-volume text-4xl mb-4"></i>
+                        <div class="text-3xl font-bold mb-2">24/7</div>
+                        <div class="text-blue-200">Emergency Service</div>
                     </div>
                     <div class="bg-blue-900 rounded-2xl p-8 text-white">
                         <i class="fas fa-dollar-sign text-4xl mb-4"></i>
@@ -362,7 +408,7 @@
         <div class="max-w-4xl mx-auto text-center text-white">
             <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
             <p class="text-xl mb-8 text-gray-200">
-                Give us a call today to schedule an estimate or set up an appointment. We're here to serve South Carolina with quality HVAC service.
+                Give us a call today to schedule an estimate or set up an appointment. We're here to serve South Carolina with quality HVAC service, 24 hours a day, 7 days a week.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contact" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
@@ -390,25 +436,27 @@
                     <form class="space-y-6">
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="John Doe">
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="John Doe" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="john@example.com">
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="john@example.com" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="(803) 555-1234">
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="(803) 555-1234" required>
                         </div>
                         <div>
                             <label class="block text-gray-700 font-semibold mb-2">Service Needed</label>
                             <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200">
                                 <option>Air Conditioning Installation</option>
                                 <option>Air Conditioning Repair</option>
+                                <option>Heating Services</option>
                                 <option>Duct Cleaning</option>
                                 <option>Coil Cleaning</option>
-                                <option>Maintenance Plan</option>
+                                <option>Maintenance Agreement</option>
                                 <option>Commercial Services</option>
+                                <option>Emergency Service</option>
                                 <option>Other</option>
                             </select>
                         </div>
@@ -431,7 +479,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900 mb-2">Call Us</h4>
-                                <p class="text-gray-600 mb-1">Available 7 days a week</p>
+                                <p class="text-gray-600 mb-1">24 hour emergency service</p>
                                 <a href="tel:+18037751378" class="text-blue-700 font-semibold text-lg hover:text-blue-800">(803) 775-1378</a>
                             </div>
                         </div>
@@ -459,20 +507,20 @@
 
                         <div class="flex items-start">
                             <div class="bg-blue-100 rounded-full p-4 mr-6">
-                                <i class="fas fa-dollar-sign text-2xl text-blue-700"></i>
+                                <i class="fas fa-tools text-2xl text-blue-700"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-gray-900 mb-2">Free Estimates</h4>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Factory Authorized</h4>
                                 <p class="text-gray-600">
-                                    We provide free estimates on all services. Fair, transparent pricing you can trust.
+                                    Carrier Dealer with factory trained technicians. Quality service you can trust.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-12 bg-gradient-to-r from-blue-700 to-blue-900 rounded-2xl p-8 text-white">
-                        <h4 class="text-2xl font-bold mb-4">Service Available 7 Days a Week</h4>
-                        <p class="mb-6">Quick, efficient service with our fleet of vehicles dispatched daily across South Carolina.</p>
+                        <h4 class="text-2xl font-bold mb-4">Always Available</h4>
+                        <p class="mb-6">At Hoyt's you will always speak to a person, regardless of the hour. Quick, efficient service with our fleet of vehicles dispatched daily across South Carolina.</p>
                         <a href="tel:+18037751378" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                             <i class="fas fa-phone mr-2"></i>Call (803) 775-1378
                         </a>
@@ -487,10 +535,9 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <h3 class="text-xl font-bold">Hoyt's Heating and Air Conditioning</h3>
-                    </div>
-                    <p class="text-gray-400">Serving South Carolina since 1958 with quality HVAC services.</p>
+                    <h3 class="text-xl font-bold mb-4">Hoyt's Heating and Air Conditioning</h3>
+                    <p class="text-gray-400 mb-4">Serving South Carolina since 1958 with quality HVAC services.</p>
+                    <p class="text-sm text-gray-500">Factory Authorized Carrier Dealer</p>
                 </div>
                 
                 <div>
@@ -508,10 +555,11 @@
                     <h4 class="font-bold text-lg mb-4">Services</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li>Air Conditioning</li>
+                        <li>Heating Systems</li>
                         <li>Duct & Coil Cleaning</li>
                         <li>Maintenance Plans</li>
                         <li>Commercial HVAC</li>
-                        <li>Electrical Services</li>
+                        <li>Emergency Service</li>
                     </ul>
                 </div>
                 
@@ -521,6 +569,7 @@
                         <li><a href="tel:+18037751378" class="hover:text-blue-400 transition">(803) 775-1378</a></li>
                         <li><a href="mailto:estimating@hoytsheatingandac.com" class="hover:text-blue-400 transition">estimating@hoytsheatingandac.com</a></li>
                         <li>Sumter, SC</li>
+                        <li class="text-sm pt-2">24 Hour Emergency Service</li>
                     </ul>
                 </div>
             </div>
@@ -533,8 +582,11 @@
 
     <script>
         // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
         });
 
         // Smooth scrolling
@@ -545,12 +597,12 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                     // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
+                    mobileMenu.classList.add('hidden');
                 }
             });
         });
 
-        // Form submission (replace with real form handling)
+        // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your request! We\'ll get back to you soon with your free estimate.');
