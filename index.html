@@ -6,29 +6,200 @@
     <meta name="description" content="Hoyt's Heating and Air Conditioning - Serving South Carolina since 1958 with expert HVAC services, repairs, installations, and maintenance.">
     <title>Hoyt's Heating and Air Conditioning - Serving South Carolina Since 1958</title>
     
+    <!-- Critical inline CSS for above-fold content -->
+    <style>
+        /* Critical CSS for initial render */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #f9fafb;
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation - Critical */
+        nav {
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 6rem;
+        }
+        
+        .logo-container {
+            max-width: 280px;
+        }
+        
+        .logo-container img {
+            height: 4rem;
+            width: auto;
+        }
+        
+        /* Hero - Critical */
+        .hero {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            padding: 8rem 1rem 5rem;
+        }
+        
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.75;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1e40af;
+        }
+        
+        /* Hide elements that need Tailwind/FA */
+        .needs-tailwind { display: none; }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Optimized Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+</head>
+<body>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* Use system fonts for better performance */
-        * {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-        }
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="hotylogo.png" alt="Hoyt's Heating and Air Conditioning Logo" width="280" height="64">
+            </div>
+            
+            <div class="hidden md:flex space-x-8 needs-tailwind">
+                <a href="#home" class="text-gray-700 hover:text-blue-700 font-semibold transition">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-700 font-semibold transition">Services</a>
+                <a href="#maintenance" class="text-gray-700 hover:text-blue-700 font-semibold transition">Maintenance</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-700 font-semibold transition">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-700 font-semibold transition">Contact</a>
+            </div>
+            
+            <a href="tel:+18037751378" class="hidden md:block btn-primary text-white px-6 py-3 rounded-lg font-semibold needs-tailwind" aria-label="Call us at 803-775-1378">
+                <i class="fas fa-phone mr-2"></i>Call Now
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 needs-tailwind" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
         
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t needs-tailwind">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-blue-700 font-semibold">Home</a>
+                <a href="#services" class="block text-gray-700 hover:text-blue-700 font-semibold">Services</a>
+                <a href="#maintenance" class="block text-gray-700 hover:text-blue-700 font-semibold">Maintenance</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-700 font-semibold">About</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-700 font-semibold">Contact</a>
+                <a href="tel:+18037751378" class="block btn-primary text-white px-6 py-3 rounded-lg font-semibold text-center">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Exceptional Air Conditioning Service Since 1958</h1>
+            <p>
+                Factory Authorized Carrier Dealer serving South Carolina from Columbia to the coast with quality repairs, installations, and duct/coil cleanings. Our talented team of factory-trained technicians is ready to serve you.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#contact" class="btn btn-primary">Get Free Estimate</a>
+                <a href="tel:+18037751378" class="btn btn-secondary">(803) 775-1378</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Load Tailwind CSS after critical content -->
+    <script>
+        // Load Tailwind CSS after page load
+        window.addEventListener('load', function() {
+            var tailwind = document.createElement('script');
+            tailwind.src = 'https://cdn.tailwindcss.com';
+            document.head.appendChild(tailwind);
+            
+            // Load Font Awesome after Tailwind
+            setTimeout(function() {
+                var fontawesome = document.createElement('link');
+                fontawesome.rel = 'stylesheet';
+                fontawesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+                document.head.appendChild(fontawesome);
+                
+                // Show elements that need Tailwind
+                setTimeout(function() {
+                    document.querySelectorAll('.needs-tailwind').forEach(function(el) {
+                        el.style.display = '';
+                    });
+                }, 100);
+            }, 100);
+        });
+    </script>
+
+    <!-- Full Tailwind styling loaded after initial render -->
+    <div class="needs-tailwind">
+    <style>
         .gradient-bg {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-        }
-        
-        .hero-pattern {
-            background-color: #0f172a;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
         .card-hover {
@@ -50,10 +221,6 @@
             box-shadow: 0 10px 20px rgba(30, 64, 175, 0.4);
         }
         
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -69,10 +236,6 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        .logo-container {
-            max-width: 280px;
-        }
-
         .vintage-photo {
             filter: grayscale(100%);
             transition: filter 0.3s ease;
@@ -82,70 +245,12 @@
             filter: grayscale(0%);
         }
     </style>
-</head>
-<body class="smooth-scroll bg-gray-50">
-    
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
-                <div class="flex items-center logo-container">
-                    <img src="hotylogo.png" alt="Hoyt's Heating and Air Conditioning" class="h-16 w-auto" width="280" height="64">
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-700 font-semibold transition">Home</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-700 font-semibold transition">Services</a>
-                    <a href="#maintenance" class="text-gray-700 hover:text-blue-700 font-semibold transition">Maintenance</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-700 font-semibold transition">About</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-700 font-semibold transition">Contact</a>
-                </div>
-                
-                <a href="tel:+18037751378" class="hidden md:block btn-primary text-white px-6 py-3 rounded-lg font-semibold">
-                    <i class="fas fa-phone mr-2"></i>Call Now
-                </a>
-                
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700" aria-label="Toggle menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-4 space-y-3">
-                <a href="#home" class="block text-gray-700 hover:text-blue-700 font-semibold">Home</a>
-                <a href="#services" class="block text-gray-700 hover:text-blue-700 font-semibold">Services</a>
-                <a href="#maintenance" class="block text-gray-700 hover:text-blue-700 font-semibold">Maintenance</a>
-                <a href="#about" class="block text-gray-700 hover:text-blue-700 font-semibold">About</a>
-                <a href="#contact" class="block text-gray-700 hover:text-blue-700 font-semibold">Contact</a>
-                <a href="tel:+18037751378" class="block btn-primary text-white px-6 py-3 rounded-lg font-semibold text-center">
-                    <i class="fas fa-phone mr-2"></i>Call Now
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-pattern pt-32 pb-20 px-4">
+    <!-- Hero Stats -->
+    <section class="hero-pattern pb-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white fade-in-up">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                        Exceptional Air Conditioning Service Since 1958
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        Factory Authorized Carrier Dealer serving South Carolina from Columbia to the coast with quality repairs, installations, and duct/coil cleanings. Our talented team of factory-trained technicians is ready to serve you.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg text-center">
-                            Get Free Estimate
-                        </a>
-                        <a href="tel:+18037751378" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition text-center">
-                            <i class="fas fa-phone mr-2"></i>(803) 775-1378
-                        </a>
-                    </div>
-                    
+                <div class="text-white">
                     <div class="mt-12 grid grid-cols-3 gap-6">
                         <div class="text-center">
                             <div class="text-4xl font-bold">66+</div>
@@ -196,52 +301,52 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-gray-200">
+                <article class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-gray-200">
                     <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-snowflake text-3xl text-blue-700"></i>
+                        <i class="fas fa-snowflake text-3xl text-blue-700" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Air Conditioning</h3>
                     <p class="text-gray-600 mb-6">
                         Expert AC installations and repairs. Keep your home or business cool and comfortable year-round with quality Carrier service.
                     </p>
                     <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> AC Installation</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> AC Repairs</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Duct Cleaning</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> AC Installation</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> AC Repairs</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Duct Cleaning</li>
                     </ul>
-                </div>
+                </article>
 
                 <!-- Service Card 2 -->
-                <div class="card-hover bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-gray-200">
+                <article class="card-hover bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-gray-200">
                     <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-wind text-3xl text-orange-600"></i>
+                        <i class="fas fa-wind text-3xl text-orange-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Heating & Ventilation</h3>
                     <p class="text-gray-600 mb-6">
                         Professional heating and ventilation services to improve air quality and system efficiency for your property.
                     </p>
                     <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Boilers & Heating</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Exhaust Systems</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Air Quality Improvement</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Boilers & Heating</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Exhaust Systems</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Air Quality Improvement</li>
                     </ul>
-                </div>
+                </article>
 
                 <!-- Service Card 3 -->
-                <div class="card-hover bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-gray-200">
+                <article class="card-hover bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-gray-200">
                     <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fas fa-building text-3xl text-green-600"></i>
+                        <i class="fas fa-building text-3xl text-green-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Services</h3>
                     <p class="text-gray-600 mb-6">
                         Full-service commercial HVAC, electrical, sheet metal fabrication, and communication systems for businesses.
                     </p>
                     <ul class="space-y-2 text-gray-700">
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Commercial HVAC</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Electrical & Data</li>
-                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm"></i> Metal Fabrication</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Commercial HVAC</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Electrical & Data</li>
+                        <li><i class="fas fa-arrow-right text-blue-700 mr-2 text-sm" aria-hidden="true"></i> Metal Fabrication</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -258,56 +363,56 @@
 
             <div class="grid md:grid-cols-2 gap-8 mb-12">
                 <!-- Benefit Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <article class="bg-white rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-blue-100 rounded-full p-4 mr-6">
-                            <i class="fas fa-dollar-sign text-3xl text-blue-700"></i>
+                            <i class="fas fa-dollar-sign text-3xl text-blue-700" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Save Money</h3>
                             <p class="text-gray-600">A well maintained system will run more efficiently, which will cut costs and reduce utility bills throughout the year.</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Benefit Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <article class="bg-white rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-blue-100 rounded-full p-4 mr-6">
-                            <i class="fas fa-clock text-3xl text-blue-700"></i>
+                            <i class="fas fa-clock text-3xl text-blue-700" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Extended Life</h3>
                             <p class="text-gray-600">Regular maintenance will make sure that your unit is maintained properly twice a year, resulting in longer lasting units.</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Benefit Card 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <article class="bg-white rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-blue-100 rounded-full p-4 mr-6">
-                            <i class="fas fa-shield-alt text-3xl text-blue-700"></i>
+                            <i class="fas fa-shield-alt text-3xl text-blue-700" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Prevent Costly Breakdowns</h3>
                             <p class="text-gray-600">Be proactive, not reactive. With regular maintenance, you can identify and solve issues before a breakdown occurs.</p>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Benefit Card 4 -->
-                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <article class="bg-white rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start">
                         <div class="bg-blue-100 rounded-full p-4 mr-6">
-                            <i class="fas fa-chart-line text-3xl text-blue-700"></i>
+                            <i class="fas fa-chart-line text-3xl text-blue-700" aria-hidden="true"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Better Efficiency</h3>
                             <p class="text-gray-600">With regular semi-annual preventive maintenance, your system will perform at its highest level for years to come.</p>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
 
             <div class="bg-gradient-to-r from-blue-700 to-blue-900 rounded-3xl p-10 text-white text-center">
@@ -346,7 +451,7 @@
                 </div>
                 <div class="order-1 md:order-2">
                     <div class="bg-gray-100 rounded-2xl p-6 shadow-xl">
-                        <img src="Old-Hoyt.png" alt="Hoyt Shuler with original Hoyt's service van" class="vintage-photo rounded-lg w-full" width="600" height="450" loading="lazy">
+                        <img src="Old-Hoyt.png" alt="Founder Hoyt Shuler standing next to original Hoyt's service van with Carrier logo" class="vintage-photo rounded-lg w-full" width="600" height="450" loading="lazy">
                         <p class="text-center text-gray-600 mt-4 italic">Founder Hoyt Shuler with one of the original Hoyt's service vehicles</p>
                     </div>
                 </div>
@@ -365,12 +470,12 @@
                     
                     <div class="grid grid-cols-2 gap-6">
                         <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-certificate text-3xl text-blue-700 mb-3"></i>
+                            <i class="fas fa-certificate text-3xl text-blue-700 mb-3" aria-hidden="true"></i>
                             <h4 class="font-bold text-gray-900 mb-2">Factory Authorized</h4>
                             <p class="text-sm text-gray-600">Carrier Dealer with factory trained technicians</p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-award text-3xl text-blue-700 mb-3"></i>
+                            <i class="fas fa-award text-3xl text-blue-700 mb-3" aria-hidden="true"></i>
                             <h4 class="font-bold text-gray-900 mb-2">Licensed & Insured</h4>
                             <p class="text-sm text-gray-600">Fully licensed, bonded, and insured for your protection</p>
                         </div>
@@ -379,22 +484,22 @@
                 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-blue-700 rounded-2xl p-8 text-white">
-                        <i class="fas fa-calendar-alt text-4xl mb-4"></i>
+                        <i class="fas fa-calendar-alt text-4xl mb-4" aria-hidden="true"></i>
                         <div class="text-3xl font-bold mb-2">1958</div>
                         <div class="text-blue-200">Established</div>
                     </div>
                     <div class="bg-blue-600 rounded-2xl p-8 text-white mt-8">
-                        <i class="fas fa-map-marked-alt text-4xl mb-4"></i>
+                        <i class="fas fa-map-marked-alt text-4xl mb-4" aria-hidden="true"></i>
                         <div class="text-3xl font-bold mb-2">SC</div>
                         <div class="text-blue-200">Serving South Carolina</div>
                     </div>
                     <div class="bg-blue-800 rounded-2xl p-8 text-white -mt-8">
-                        <i class="fas fa-phone-volume text-4xl mb-4"></i>
+                        <i class="fas fa-phone-volume text-4xl mb-4" aria-hidden="true"></i>
                         <div class="text-3xl font-bold mb-2">24/7</div>
                         <div class="text-blue-200">Emergency Service</div>
                     </div>
                     <div class="bg-blue-900 rounded-2xl p-8 text-white">
-                        <i class="fas fa-dollar-sign text-4xl mb-4"></i>
+                        <i class="fas fa-dollar-sign text-4xl mb-4" aria-hidden="true"></i>
                         <div class="text-3xl font-bold mb-2">Free</div>
                         <div class="text-blue-200">Estimates</div>
                     </div>
@@ -415,7 +520,7 @@
                     Get Free Estimate
                 </a>
                 <a href="tel:+18037751378" class="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-900 transition">
-                    <i class="fas fa-phone mr-2"></i>(803) 775-1378
+                    <i class="fas fa-phone mr-2" aria-hidden="true"></i>(803) 775-1378
                 </a>
             </div>
         </div>
@@ -433,22 +538,22 @@
                 <!-- Contact Form -->
                 <div class="bg-gray-50 rounded-2xl p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Request a Free Estimate</h3>
-                    <form class="space-y-6">
+                    <form class="space-y-6" aria-label="Contact form">
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="John Doe" required>
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="John Doe" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="john@example.com" required>
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="john@example.com" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Phone</label>
-                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="(803) 555-1234" required>
+                            <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="(803) 555-1234" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Service Needed</label>
-                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200">
+                            <label for="service" class="block text-gray-700 font-semibold mb-2">Service Needed</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200">
                                 <option>Air Conditioning Installation</option>
                                 <option>Air Conditioning Repair</option>
                                 <option>Heating Services</option>
@@ -461,8 +566,8 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Tell us about your HVAC needs..."></textarea>
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200" placeholder="Tell us about your HVAC needs..."></textarea>
                         </div>
                         <button type="submit" class="btn-primary w-full text-white px-8 py-4 rounded-lg font-semibold text-lg">
                             Send Request
@@ -475,7 +580,7 @@
                     <div class="space-y-8">
                         <div class="flex items-start">
                             <div class="bg-blue-100 rounded-full p-4 mr-6">
-                                <i class="fas fa-phone text-2xl text-blue-700"></i>
+                                <i class="fas fa-phone text-2xl text-blue-700" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900 mb-2">Call Us</h4>
@@ -486,7 +591,7 @@
 
                         <div class="flex items-start">
                             <div class="bg-blue-100 rounded-full p-4 mr-6">
-                                <i class="fas fa-envelope text-2xl text-blue-700"></i>
+                                <i class="fas fa-envelope text-2xl text-blue-700" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900 mb-2">Email Us</h4>
@@ -497,7 +602,7 @@
 
                         <div class="flex items-start">
                             <div class="bg-blue-100 rounded-full p-4 mr-6">
-                                <i class="fas fa-map-marker-alt text-2xl text-blue-700"></i>
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-700" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900 mb-2">Service Area</h4>
@@ -507,7 +612,7 @@
 
                         <div class="flex items-start">
                             <div class="bg-blue-100 rounded-full p-4 mr-6">
-                                <i class="fas fa-tools text-2xl text-blue-700"></i>
+                                <i class="fas fa-tools text-2xl text-blue-700" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-gray-900 mb-2">Factory Authorized</h4>
@@ -522,7 +627,7 @@
                         <h4 class="text-2xl font-bold mb-4">Always Available</h4>
                         <p class="mb-6">At Hoyt's you will always speak to a person, regardless of the hour. Quick, efficient service with our fleet of vehicles dispatched daily across South Carolina.</p>
                         <a href="tel:+18037751378" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            <i class="fas fa-phone mr-2"></i>Call (803) 775-1378
+                            <i class="fas fa-phone mr-2" aria-hidden="true"></i>Call (803) 775-1378
                         </a>
                     </div>
                 </div>
@@ -579,15 +684,20 @@
             </div>
         </div>
     </footer>
+    </div>
 
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -597,17 +707,25 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                     // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        }
+                    }
                 }
             });
         });
 
         // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your request! We\'ll get back to you soon with your free estimate.');
-            this.reset();
-        });
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your request! We\'ll get back to you soon with your free estimate.');
+                this.reset();
+            });
+        }
     </script>
 </body>
 </html>
